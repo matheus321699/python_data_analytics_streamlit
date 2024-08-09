@@ -6,7 +6,7 @@ from matplotlib.ticker import FuncFormatter
 import seaborn as sns
 from utils import formato_brasileiro
 
-table = pd.read_excel('database/gastos_trimestrais_fornecedores.xlsx')
+table2 = pd.read_excel('database/gastos_trimestrais_fornecedores.xlsx')
 
-table
+table2
 

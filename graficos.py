@@ -74,3 +74,12 @@ plt.xticks(rotation=45, ha='right')
 
 grafico_lucro_meses = plt.gcf()
 
+quantidade_produtos_vendidos = table.groupby('Produto')['Qtde de Unidades Vendidas'].sum().reset_index()
+
+plt.figure(figsize=(12,8))
+plt.bar(quantidade_produtos_vendidos['Produto'], quantidade_produtos_vendidos['Qtde de Unidades Vendidas'], color='blue')
+plt.title('Quantidade de Produtos Vendidos no ano de 2019')
+plt.xlabel('Produtos')
+plt.ylabel('Quantidade')
+plt.gca().yaxis.set_major_formatter(FuncFormatter(formato_brasileiro))
+grafico_produtos_vendidos = plt.gcf()
