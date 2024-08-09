@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from dataset import df
 from graficos import table
 from utils import format_number
-from graficos import grafico_lucro_produtos, grafico_custos_produtos
+from graficos import grafico_lucro_produtos, grafico_custos_produtos, grafico_lucro_meses
 
 st.set_page_config(layout='wide')
 st.title("Dashboard de Vendas :shopping_trolley:")
@@ -19,6 +19,7 @@ with aba2:
         st.pyplot(grafico_lucro_produtos, use_container_width=True)
     with coluna2:
         st.metric('Quantidade de Vendas', format_number(table['Qtde de Unidades Vendidas'].sum()))
+        st.pyplot(grafico_lucro_meses)
 with aba3:
         st.metric('Custo Total', format_number(table['Custo Total'].sum()))
         st.pyplot(grafico_custos_produtos)
