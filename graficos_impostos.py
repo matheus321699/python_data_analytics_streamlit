@@ -11,8 +11,8 @@ table3 = pd.read_excel('database/impostos_empresa_2019.xlsx')
 total_impostos = table3['Imposto de Renda'].sum() + table3['ICMS'].sum() + table3['ISS'].sum()
 
 imposto_renda_total = table3['Imposto de Renda'].sum()
-icms_total = table3['ICMS']
-iss_total = table3['ISS']
+icms_total = table3['ICMS'].sum()
+iss_total = table3['ISS'].sum()
 
 data = {
         'Impostos': ['Imposto de Renda', 'ICMS', 'ISS'],
@@ -21,7 +21,7 @@ data = {
 
 table_impostos_total = pd.DataFrame(data)
 
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(8, 4))
 plt.bar(table_impostos_total['Impostos'].astype(str), table_impostos_total['Total'], color='blue')
 plt.title('Impostos totais no ano de 2019')
 plt.xlabel('Total')
